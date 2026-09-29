@@ -9,6 +9,7 @@ grep -qxF 'Call-Post-Checkout.sh' .git/info/exclude||echo 'Call-Post-Checkout.sh
 CMD <<END
 for /r %i in (*.*) do (start explorer "%~dpnxi")
 END
+sleep 1
 unset GIT_DIR
 unset GIT_WORK_TREE
 exit 0
